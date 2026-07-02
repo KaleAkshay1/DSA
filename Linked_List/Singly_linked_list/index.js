@@ -81,6 +81,7 @@ class LinkedList {
     let num = this.head;
     if(num.next === null){
       this.head = null;
+      return;
     }
     while(num.next.next !== null) {
       num = num.next;
@@ -105,6 +106,29 @@ class LinkedList {
       prev = num;
       num = num.next;
     }
+  }
+
+  getLength() {
+    let length = 0;
+    let node = this.head;
+    while(node !== null){
+      length += 1;
+      node = node.next;
+    }
+    return length;
+  }
+
+  isEmpty() {
+    return this.head === null;
+  }
+
+  contains(val) {
+    let num = this.head;
+    while(num !== null){
+      if(num.data === val) return true;
+      num = num.next;
+    }
+    return false;
   }
 
   display() {
@@ -136,9 +160,12 @@ LL.insertAtStart(2)
 LL.insertAtStart(3)
 LL.insertAtLast(5)
 LL.insertAtLast(4)
-LL.insertAtMidAfterPosition(11,1)
-LL.insertAtMidBeforePosition(12,1)
-LL.deleteAtStart()
-LL.deleteAtEnd()
-LL.deleteSpecificNode(12)
+// LL.insertAtMidAfterPosition(11,1)
+// LL.insertAtMidBeforePosition(12,1)
+// LL.deleteAtStart()
+// LL.deleteAtEnd()
+// LL.deleteSpecificNode(12)
+console.log(LL.getLength())
+console.log(LL.isEmpty())
+console.log(LL.contains(4))
 console.log(LL.display());
