@@ -131,6 +131,15 @@ class LinkedList {
     return false;
   }
 
+  getLast() {
+    let num = this.head;
+    if(num === null) return null;
+    while(num.next !== null){
+      num = num.next;
+    }
+    return num.data;
+  }
+
   display() {
     let num = this.head;
 
@@ -168,4 +177,5 @@ LL.insertAtLast(4)
 console.log(LL.getLength())
 console.log(LL.isEmpty())
 console.log(LL.contains(4))
+console.log(LL.getLast())
 console.log(LL.display());
