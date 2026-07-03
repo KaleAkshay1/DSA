@@ -140,6 +140,31 @@ class LinkedList {
     return num.data;
   }
 
+  updateNode(node, updatedNode) {
+    let num = this.head;
+    if(num === null) return;
+    while(num !== null) {
+      if(num.data === node){
+        num.data = updatedNode;
+        return;
+      }
+      num = num.next;
+    }
+  }
+
+  getNthNode(ind) {
+    let num = this.head;
+    let dummyInd = 0;
+    
+    while(num !== null){
+      if(dummyInd === ind) return num.data;
+      num = num.next;
+      dummyInd += 1;
+    }
+
+    return null;
+  }
+
   display() {
     let num = this.head;
 
@@ -178,4 +203,6 @@ console.log(LL.getLength())
 console.log(LL.isEmpty())
 console.log(LL.contains(4))
 console.log(LL.getLast())
+console.log(LL.updateNode(1,11))
+console.log(LL.getNthNode(4))
 console.log(LL.display());
