@@ -165,8 +165,23 @@ class LinkedList {
     return null;
   }
 
+  reverseLinkedList() {
+    let current = this.head;
+    let prew = null;
+
+    while(current !== null){
+      let next = current.next;
+
+      current.next = prew;
+      prew = current;
+      current = next
+    }
+    this.head = prew;
+  }
+
   display() {
     let num = this.head;
+    return num
 
     if (num === null) {
         return "Empty List";
@@ -192,17 +207,20 @@ const LL = new LinkedList();
 LL.insertAtStart(1)
 LL.insertAtStart(2)
 LL.insertAtStart(3)
-LL.insertAtLast(5)
-LL.insertAtLast(4)
+// LL.insertAtLast(5)
+// LL.insertAtLast(4)
+// LL.insertAtMidAfterPosition(11,1)
 // LL.insertAtMidAfterPosition(11,1)
 // LL.insertAtMidBeforePosition(12,1)
 // LL.deleteAtStart()
 // LL.deleteAtEnd()
 // LL.deleteSpecificNode(12)
-console.log(LL.getLength())
-console.log(LL.isEmpty())
-console.log(LL.contains(4))
-console.log(LL.getLast())
-console.log(LL.updateNode(1,11))
-console.log(LL.getNthNode(4))
+// console.log(LL.getLength())
+// console.log(LL.isEmpty())
+// console.log(LL.contains(4))
+// console.log(LL.getLast())
+// console.log(LL.updateNode(1,11))
+// console.log(LL.getNthNode(4))
+console.log(LL.display());
+console.log(LL.reverseLinkedList())
 console.log(LL.display());
