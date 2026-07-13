@@ -179,6 +179,41 @@ class LinkedList {
     this.head = prew;
   }
 
+  // initial thinking
+  // getMiddelNode() {
+  //   let slow = this.head;
+  //   let fast = this.head;
+
+  //   while (fast !== null){
+  //     console.log(fast,slow)
+  //     if(fast.next !== null && fast.next !== undefined){
+  //       if(fast.next.next !== null && fast.next.next !== undefined){
+  //         slow = slow.next;
+  //         fast = fast.next.next;
+  //       }else{
+  //         return slow.next.data;
+  //       }
+  //     }else{
+  //       return slow.data;
+  //     }  
+  //   }
+  // }
+
+  // optimize thinking
+  getMiddleNode() {
+    if (this.head === null) return null;
+
+    let slow = this.head;
+    let fast = this.head;
+
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    return slow.data;
+  }
+
   display() {
     let num = this.head;
     return num
@@ -207,6 +242,9 @@ const LL = new LinkedList();
 LL.insertAtStart(1)
 LL.insertAtStart(2)
 LL.insertAtStart(3)
+LL.insertAtStart(4)
+LL.insertAtStart(5)
+LL.insertAtStart(6)
 // LL.insertAtLast(5)
 // LL.insertAtLast(4)
 // LL.insertAtMidAfterPosition(11,1)
@@ -221,6 +259,7 @@ LL.insertAtStart(3)
 // console.log(LL.getLast())
 // console.log(LL.updateNode(1,11))
 // console.log(LL.getNthNode(4))
+// console.log(LL.display());
+// console.log(LL.reverseLinkedList())
 console.log(LL.display());
-console.log(LL.reverseLinkedList())
-console.log(LL.display());
+console.log(LL.getMiddleNode());
