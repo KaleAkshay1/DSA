@@ -3,6 +3,7 @@
     "nodemon": "^3.1.14"
   },
   "scripts": {
-    "sll": "nodemon Linked_List/Singly_linked_list/index.js"
+    "sll": "nodemon Linked_List/Singly_linked_list/index.js",
+    "stack": "nodemon Stack/index.js"
   }
 }
