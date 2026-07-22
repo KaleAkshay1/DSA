@@ -32,12 +32,24 @@ class Stack {
     }
 }
 
-const stack = new Stack();
-stack.push(1)
-stack.push(2)
-console.log(stack.pop())
-console.log(stack.pop())
-console.log(stack.top())
-console.log(stack.isEmpty())
-console.log(stack.size())
-console.log(stack.display())
+
+function validateParanthisis(str) {
+    const stack = new Stack();
+    let validationObj = {
+        "(": ")",
+        "[": "]",
+        "{": "}"
+    }
+    for(let i=0; i<str.length; i++){
+        if(validationObj[stack.top()] === str[i]){
+            stack.pop();
+        }else if(!validationObj[str[i]]){
+            return false;
+        }else{
+            stack.push(str[i]);
+        }
+    }
+    return stack.size() === 0;
+}
+
+console.log(validateParanthisis("]"))
