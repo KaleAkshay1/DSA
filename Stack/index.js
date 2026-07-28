@@ -53,3 +53,23 @@ function validateParanthisis(str) {
 }
 
 console.log(validateParanthisis("]"))
+
+function nextGreaterElement(arr) {
+    const stack = new Stack();
+    const result = new Array(arr.length);
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+
+        while (!stack.isEmpty() && stack.top() <= arr[i]) {
+            stack.pop();
+        }
+
+        result[i] = stack.isEmpty() ? -1 : stack.top();
+
+        stack.push(arr[i]);
+    }
+
+    return result;
+}
+
+console.log(nextGreaterElement([4, 5, 2, 10]));
