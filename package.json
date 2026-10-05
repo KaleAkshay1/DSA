@@ -4,6 +4,7 @@
   },
   "scripts": {
     "sll": "nodemon Linked_List/Singly_linked_list/index.js",
-    "stack": "nodemon Stack/index.js"
+    "stack": "nodemon Stack/index.js",
+    "Array": "nodemon Array/index.js"
   }
 }
