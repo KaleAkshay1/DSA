@@ -51,17 +51,34 @@
 // console.log(sortEvenOdd([3, 1, 2, 4]))
 
 // REMOVE DUBLICATE IN ARRAY
-function removeDublicateInArray(arr) {
-    let i = 1;
-    let j = 1;
-    while(i < arr.length){
-        if(arr[i] !== arr[i-1]){
-           arr[j] = arr[i];
-            j++;
+// function removeDublicateInArray(arr) {
+//     let i = 1;
+//     let j = 1;
+//     while(i < arr.length){
+//         if(arr[i] !== arr[i-1]){
+//            arr[j] = arr[i];
+//             j++;
+//         }
+//         i++;
+//     }
+//     arr.length = j;
+//     return arr;
+// }
+// console.log(removeDublicateInArray([1, 1, 2, 2, 3, 4, 4]))
+
+// BEST TIME TO BUY AND SELL SHARES
+let maxProfit = function(prices) {
+    let i = 0;
+    let j = 0;
+    let profit = 0;
+    while(i< prices.length){
+        if(prices[j] > prices[i]){
+            j=i;
+        }else if(prices[i] - prices[j] > profit){
+            profit = prices[i] - prices[j];
         }
         i++;
     }
-    arr.length = j;
-    return arr;
-}
-console.log(removeDublicateInArray([1, 1, 2, 2, 3, 4, 4]))
+    return profit;
+};
+console.log(maxProfit([7,1,5,3,6,4]))
