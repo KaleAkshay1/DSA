@@ -31,3 +31,21 @@
 //     return arr;
 // }
 // console.log(shiftAllZeroToEnd([0,1,0,3,12]))
+
+// SORT EVEN AND ODD VALUE IN ARRAY EVEN IN START AND ODD AT END
+function sortEvenOdd(arr) {
+  let i = 0;
+  let j = 0;
+
+  while(i < arr.length){
+    if(arr[i] % 2 === 0){
+      let val = arr[i];
+      arr[i] = arr[j];
+      arr[j] = val;
+      j++
+    }
+    i++;
+  }
+  return arr;
+}
+console.log(sortEvenOdd([3, 1, 2, 4]))
